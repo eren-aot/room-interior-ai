@@ -19,6 +19,7 @@ const RoomFormPage = () => {
             style: "",
             materials: "",
             aspect_ratio: "",
+            prompt: "",
         }
     });
 
@@ -73,9 +74,20 @@ const RoomFormPage = () => {
                         </FormItem>
                     )}
                 />
-                {/* <FormField
-                    name='prompt' 
-                /> */}
+                <FormField
+                    control={form.control}
+                    name='prompt'
+                    render={({field}) => (
+                        <FormItem>
+                            <FormLabel>
+                                Prompt
+                            </FormLabel>
+                            <FormControl>
+                                <Input placeholder='Prompt' {...field} />
+                            </FormControl>
+                        </FormItem>
+                    )} 
+                />
                 <FormField
                     control={form.control}
                     name='aspect_ratio'
